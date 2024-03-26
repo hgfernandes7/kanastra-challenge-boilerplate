@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  # Serviço para o servidor Node.js (porta 3000)
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000" # Mapeando a porta 3000 do contêiner para a porta 3000 do host
+    volumes:
+      - .:/app # Mapeando o diretório atual para /app no contêiner
+
